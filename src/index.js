@@ -8,6 +8,8 @@ import logger from "redux-logger";
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 
 //reducers go here
+
+//reducer for list of feedback history
 const feedbackList = (state = [], action) => {
     if (action.type === "FEEDBACK_INFO"){
         console.log(action.payload);
@@ -15,10 +17,19 @@ const feedbackList = (state = [], action) => {
     }
     return state;
 };
+
+//reducer for current feedback session
+const feelingInfo = (state = [], action) => {
+    if (action.type === 'FEELINGS_INFO'){
+        return action.payload;
+    }
+    return state;
+};
 //store goes here
 const storeInstance = createStore(
     combineReducers({
-feedbackList
+feedbackList,
+feelingInfo
     }),
     applyMiddleware(logger)
 );
