@@ -2,34 +2,32 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
-
-function PageTwo() {
-    //set understanding value
+function PageThree() {
 const dispatch = useDispatch();
-const [understandingValue, setUnderstandingValue] = useState('')
+const [supportValue, setSupportValue] = useState('')
 
 
     const handleNext = () => {
         event.preventDefault();
     
         dispatch({
-            type: "UNDERSTANDING_INFO",
-            payload: {understandingValue}
+            type: "SUPPORT_INFO",
+            payload: {supportValue}
         })
     }
     return(
         <>
-        <h1>How well are you understanding the content?</h1>
+        <h1>How well do you feel supported?</h1>
         <input
     placeholder="1-5"
-    value={understandingValue}
-    onChange={(evt) => setUnderstandingValue(evt.target.value)}
+    value={supportValue}
+    onChange={(evt) => setSupportValue(evt.target.value)}
     />
-    <Link to="/PageThree">
+    <Link to="/PageFour">
     <button type="button" onClick={handleNext}>Next</button>
     </Link>
         </>
     )
 }
 
-export default PageTwo;
+export default PageThree;

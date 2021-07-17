@@ -25,11 +25,39 @@ const feelingInfo = (state = [], action) => {
     }
     return state;
 };
+
+//reducer for understanding
+const understandingInfo = (state = [], action) => {
+    if (action.type === 'UNDERSTANDING_INFO'){
+        return action.payload;
+    }
+    return state;
+};
+
+//reducer for support
+const supportInfo = (state = [], action) => {
+    if (action.type === 'SUPPORT_INFO'){
+        return action.payload;
+    }
+    return state;
+};
+//reducer for comment section
+const commentInfo = (state = [], action) => {
+    if (action.type === 'COMMENT_INFO'){
+        return action.payload;
+    }
+    return state;
+};
+
 //store goes here
 const storeInstance = createStore(
     combineReducers({
 feedbackList,
-feelingInfo
+feelingInfo,
+understandingInfo,
+supportInfo,
+commentInfo
+
     }),
     applyMiddleware(logger)
 );

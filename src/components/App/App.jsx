@@ -6,9 +6,14 @@ import { useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 //Feedback Pages
+//feelings
 import PageOne from '../PageOne/PageOne';
+//understanding
 import PageTwo from '../PageTwo/PageTwo';
-
+//support
+import PageThree from '../PageThree/PageThree';
+//comment
+import PageFour from '../PageFour/PageFour';
 
 function App() {
 
@@ -44,6 +49,14 @@ useEffect(() => {
 
       <Route path="/PageTwo" exact>
       <PageTwo />
+      </Route>
+
+      <Route path="/PageThree" exact>
+      <PageThree />
+      </Route>
+
+      <Route path="/PageFour" exact>
+      <PageFour />
       </Route>
       </Router>
     </div>
