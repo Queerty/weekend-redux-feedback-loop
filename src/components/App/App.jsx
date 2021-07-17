@@ -3,8 +3,15 @@ import axios from 'axios';
 import './App.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
+
+//Feedback Pages
 import PageOne from '../PageOne/PageOne';
+import PageTwo from '../PageTwo/PageTwo';
+
+
 function App() {
+
 
 const dispatch = useDispatch();
 
@@ -30,7 +37,15 @@ useEffect(() => {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
+      <Router>
+        <Route path="/" exact>
       <PageOne />
+      </Route>
+
+      <Route path="/PageTwo" exact>
+      <PageTwo />
+      </Route>
+      </Router>
     </div>
   );
 }

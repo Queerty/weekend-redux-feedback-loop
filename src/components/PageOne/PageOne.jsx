@@ -5,12 +5,13 @@
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 
 function PageOne() {
 //set feelings value
 const dispatch = useDispatch();
-const [feelingsValue, setFeelingsValue] = useState(0)
+const [feelingsValue, setFeelingsValue] = useState('')
 
 const handleNext = () => {
     event.preventDefault();
@@ -28,7 +29,9 @@ return(
     value={feelingsValue}
     onChange={(evt) => setFeelingsValue(evt.target.value)}
     />
+    <Link to="/PageTwo">
     <button type="button" onClick={handleNext}>Next</button>
+    </Link>
     </>
 )
 }
