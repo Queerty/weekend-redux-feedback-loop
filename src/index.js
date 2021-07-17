@@ -8,11 +8,17 @@ import logger from "redux-logger";
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 
 //reducers go here
-
+const feedbackList = (state = [], action) => {
+    if (action.type === "FEEDBACK_INFO"){
+        console.log(action.payload);
+        return action.payload;
+    }
+    return state;
+};
 //store goes here
 const storeInstance = createStore(
     combineReducers({
-
+feedbackList
     }),
     applyMiddleware(logger)
 );

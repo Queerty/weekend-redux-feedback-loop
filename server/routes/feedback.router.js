@@ -14,15 +14,14 @@ router.get('/', (req, res) => {
     })
 });
     //POST new feedback
-    // router.post('/', async (req, res) => {
-    //     const client = await pool.connect();
+//     router.post('/', async (req, res) => {
+//         const client = await pool.connect();
 
-    //     try {
-    //         const {
+//         try {
+//             const {
 
-
-    //         }
-    //     }
-    // })
-//})
+//             }
+//         }
+//     })
+// })
 module.exports = router;
