@@ -5,7 +5,7 @@ import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from "react-redux";
 import logger from "redux-logger";
-import { applyMiddleware, combineReducers } from 'redux';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
 
 //reducers go here
 
@@ -16,7 +16,7 @@ const storeInstance = createStore(
     }),
     applyMiddleware(logger)
 );
-//wrap App in Provider to make store available 
+//wrap App in Provider to make store available to entire App
 ReactDOM.render(
 <React.StrictMode>
 <Provider store={storeInstance}>
