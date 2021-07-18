@@ -16,6 +16,9 @@ import PageThree from '../PageThree/PageThree';
 import PageFour from '../PageFour/PageFour';
 //Review
 import ReviewPage from '../ReviewPage/ReviewPage';
+//Thank you/Success page
+import ThankYouPage from '../ThankYouPage/ThankYouPage';
+
 function App() {
 
 
@@ -62,6 +65,10 @@ useEffect(() => {
 
       <Route path="/ReviewPage" exact>
       <ReviewPage />
+      </Route>
+
+      <Route path="/ThankYouPage" exact>
+      <ThankYouPage />
       </Route>
 
       </Router>

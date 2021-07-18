@@ -14,9 +14,6 @@ const selectedComment = useSelector((store) => store.commentInfo)
 //set feelings value
 const dispatch = useDispatch();
 
-
-
-
    const feelingValue= selectedFeeling.feelingsValue;
    const supportValue= selectedSupport.supportValue;
    const understandingValue= selectedUnderstanding.understandingValue;
@@ -56,7 +53,7 @@ return(
     <li>Comment: {selectedComment.commentValue}</li>
     </ul>
     
-    <Link to="/">
+    <Link to="/ThankYouPage">
     <button type="button" onClick={handleSubmit}>Submit</button>
     </Link>
     </>

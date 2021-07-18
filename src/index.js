@@ -23,6 +23,9 @@ const feelingInfo = (state = [], action) => {
     if (action.type === 'FEELINGS_INFO'){
         return action.payload;
     }
+    else if (action.type === 'RESET_FEELINGS'){
+        return action.payload
+    }
     return state;
 };
 
@@ -30,6 +33,8 @@ const feelingInfo = (state = [], action) => {
 const understandingInfo = (state = [], action) => {
     if (action.type === 'UNDERSTANDING_INFO'){
         return action.payload;
+    } else if (action.type === 'RESET_UNDERSTANDING'){
+        return action.payload
     }
     return state;
 };
@@ -38,6 +43,8 @@ const understandingInfo = (state = [], action) => {
 const supportInfo = (state = [], action) => {
     if (action.type === 'SUPPORT_INFO'){
         return action.payload;
+    } else if (action.type === 'RESET_SUPPORT'){
+        return action.payload
     }
     return state;
 };
@@ -45,6 +52,8 @@ const supportInfo = (state = [], action) => {
 const commentInfo = (state = [], action) => {
     if (action.type === 'COMMENT_INFO'){
         return action.payload;
+    } else if (action.type === 'RESET_COMMENTS'){
+        return action.payload
     }
     return state;
 };
