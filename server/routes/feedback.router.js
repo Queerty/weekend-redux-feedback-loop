@@ -13,15 +13,20 @@ router.get('/', (req, res) => {
         res.sendStatus(500);
     })
 });
-    //POST new feedback
-//     router.post('/', async (req, res) => {
-//         const client = await pool.connect();
-
-//         try {
-//             const {
-
-//             }
-//         }
-//     })
-// })
+    //POST new feedback to db after submit
+    router.post('/',  (req, res) => {
+        let newFeedback = req.body;
+        console.log(`Adding feedback`, newFeedback);
+      
+        let queryText = `INSERT INTO "feedback" ("feeling", "support", "understanding", "comments")
+                         VALUES ($1, $2, $3, $4);`;
+        pool.query(queryText, [newFeedback.feeling, newFeedback.support, newFeedback.understanding, newFeedback.comments])
+          .then(result => {
+            res.sendStatus(201);
+          })
+          .catch(error => {
+            console.log(`Error adding new feedback`, error);
+            res.sendStatus(500);
+          });
+      });
 module.exports = router;
