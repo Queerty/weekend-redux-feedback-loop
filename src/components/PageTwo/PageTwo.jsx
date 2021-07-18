@@ -42,7 +42,7 @@ function PageTwo() {
   return (
     <>
       <h1>How well are you understanding the content?</h1>
-      <p>1 being did not understand and 5 completely understood</p>
+      <p>1 meaning you did not understand and 5 meaning you completely understood</p>
 
       <form className={classes.root} noValidate autoComplete="off">
         <div>

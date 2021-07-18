@@ -42,7 +42,7 @@ function PageThree() {
   return (
     <>
       <h1>How well do you feel supported?</h1>
-      <p>1 being not good, 5 being excellent</p>
+      <p>1 being not supported, 5 being super supported</p>
 
       <form className={classes.root} noValidate autoComplete="off">
         <div>
