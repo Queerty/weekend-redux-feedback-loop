@@ -1,76 +1,73 @@
-import React from 'react';
-import axios from 'axios';
-import './App.css';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import React from "react";
+import axios from "axios";
+import "./App.css";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 //Feedback Pages
 //feelings
-import PageOne from '../PageOne/PageOne';
+import PageOne from "../PageOne/PageOne";
 //understanding
-import PageTwo from '../PageTwo/PageTwo';
+import PageTwo from "../PageTwo/PageTwo";
 //support
-import PageThree from '../PageThree/PageThree';
+import PageThree from "../PageThree/PageThree";
 //comment
-import PageFour from '../PageFour/PageFour';
+import PageFour from "../PageFour/PageFour";
 //Review
-import ReviewPage from '../ReviewPage/ReviewPage';
+import ReviewPage from "../ReviewPage/ReviewPage";
 //Thank you/Success page
-import ThankYouPage from '../ThankYouPage/ThankYouPage';
+import ThankYouPage from "../ThankYouPage/ThankYouPage";
 
 function App() {
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    fetchFeedback();
+  }, []);
 
-const dispatch = useDispatch();
-
-useEffect(() => {
-  fetchFeedback();
-}, []);
-
-//GET Feedback from server
+  //GET Feedback from server
   const fetchFeedback = () => {
     axios
       .get("/api/feedback")
       .then((response) => {
-        dispatch({ type: "SET_FEEDBACK", payload: response.data});
+        dispatch({ type: "SET_FEEDBACK", payload: response.data });
       })
       .catch((err) => {
-      console.log(err);
-      alert("Could not get feedback")
+        console.log(err);
+        alert("Could not get feedback");
       });
   };
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <h1 className='App-title'>Feedback!</h1>
+    <div className="App">
+      <header className="App-header">
+        <h1 className="App-title">Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
       <Router>
         <Route path="/" exact>
-      <PageOne />
-      </Route>
+          <PageOne />
+        </Route>
 
-      <Route path="/PageTwo" exact>
-      <PageTwo />
-      </Route>
+        <Route path="/PageTwo" exact>
+          <PageTwo />
+        </Route>
 
-      <Route path="/PageThree" exact>
-      <PageThree />
-      </Route>
+        <Route path="/PageThree" exact>
+          <PageThree />
+        </Route>
 
-      <Route path="/PageFour" exact>
-      <PageFour />
-      </Route>
+        <Route path="/PageFour" exact>
+          <PageFour />
+        </Route>
 
-      <Route path="/ReviewPage" exact>
-      <ReviewPage />
-      </Route>
+        <Route path="/ReviewPage" exact>
+          <ReviewPage />
+        </Route>
 
-      <Route path="/ThankYouPage" exact>
-      <ThankYouPage />
-      </Route>
-
+        <Route path="/ThankYouPage" exact>
+          <ThankYouPage />
+        </Route>
       </Router>
     </div>
   );
