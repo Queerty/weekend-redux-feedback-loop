@@ -23,9 +23,9 @@ const [commentValue, setCommentValue] = useState('')
     value={commentValue}
     onChange={(evt) => setCommentValue(evt.target.value)}
     />
-    {/* <Link to="/PageFour"> */}
+    <Link to="/ReviewPage">
     <button type="button" onClick={handleNext}>Next</button>
-    {/* </Link> */}
+    </Link>
         </>
     )
 }
